@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "brikmo-app",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
