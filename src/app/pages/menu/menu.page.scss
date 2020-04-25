@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+$greyLight-1: #E4EBF5;
+
+ion-header,
+ion-toolbar {
+    background: $greyLight-1;
+    --background: $greyLight-1;
+    color: #fff;
+
+    ion-button {
+        ion-icon {
+            font-size: 2rem;
+            color: #6d5dfc;
+            font-weight: bold;
+        }
+    }
+}
+
+
+ion-content {
+    background: $greyLight-1;
+    --background: $greyLight-1;
+    width: 100vw;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    ion-grid {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 100px;
+
+        ion-row {
+            ion-col {
+                h1 {
+                    font-family: 'Righteous', cursive;
+                    font-size: 8vw;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,.2), -2px -2px 4px rgba(255,255,255,1)
+                }
+            }
+        }
+    }
+}

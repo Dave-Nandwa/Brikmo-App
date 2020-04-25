@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700&display=swap');
+
+
+* {
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+/* ------------------------------------ - ----------------------------------- */
+
+$primary-light: #8abdff;
+$primary: #6d5dfc;
+$primary-dark: #5b0eeb;
+
+$white: #FFFFFF;
+$greyLight-1: #E4EBF5;
+$greyLight-2: #c8d0e7;
+$greyLight-3: #bec8e4;
+$greyDark: #9baacf;
+
+/* ------------------------------------ - ----------------------------------- */
+$dark-shadow: #141414;
+$color-white: #212121;
+$color-bg: #1A1E28;
+$ruler: 16px;
+/* ------------------------------------ - ----------------------------------- */
+
+$shadow: .3rem .3rem .6rem $greyLight-2,
+-.2rem -.2rem .5rem $white;
+$inner-shadow: inset .2rem .2rem .5rem $greyLight-2,
+inset -.2rem -.2rem .5rem $white;
+
+/* ------------------------------------ - ----------------------------------- */
+
+/* ------------------------------------ - ----------------------------------- */
+
+$gray-100: hsla(210, 38%, 95%, 1);
+$muted: hsla(214, 25%, 65%, 1);
+$black: #4a5568;
+$dark: #DFE4EA;
+$shadow-tl: -4px -2px 4px 0px;
+$shadow-br: 4px 2px 6px 0px;
+
+$shadow2: $shadow-tl $white,
+$shadow-br $dark;
+$shadow-flip: $shadow-tl $dark inset,
+$shadow-br $white inset;
+
+$radius: 3px;
+
+ion-header,
+ion-toolbar {
+    background: $greyLight-1;
+    --background: $greyLight-1;
+    color: #fff;
+}
+
+
+ion-content {
+    background: $greyLight-1;
+    --background: $greyLight-1;
+    width: 100%;
+    overflow-x: hidden;
+
+    ion-grid {
+        width: 100%;
+        margin-bottom: 20px;
+        // display: flex;
+        // justify-content: center;
+        // align-content: center;
+        // align-items: center;
+    }
+}
+
+/* ------------------------------------ - ----------------------------------- */
+
+
+.neu-card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    width: 150px;
+    height: 150px;
+    /* Basic styling and alignment */
+    /* For Neumorphism Effect */
+    background-color: #E0E5EC;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    /* For Neumorphism Effect */
+}
+
+.circle {
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background: $primary;
+    box-shadow: inset .2rem .2rem 1rem $primary-light,
+        inset -.2rem -.2rem 1rem $primary-dark,
+        $shadow;
+    color: $greyLight-1;
+
+    &:hover {
+        color: $white;
+    }
+
+    &:active {
+        box-shadow: inset .2rem .2rem 1rem $primary-dark,
+            inset -.2rem -.2rem 1rem $primary-light;
+    }
+
+    ion-icon {
+        margin: 0 auto;
+        margin-top: 12.5px;
+        font-size: 2em;
+        color: $greyLight-1;
+    }
+}
+
+.neu-shadows {
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+.input {
+    color: $white;
+    caret-color: $white;
+    margin-right: $ruler/2;
+    box-shadow: inset 2px 2px 5px $dark-shadow, inset -5px -5px 10px $color-white;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    font-size: $ruler;
+    padding: 5px;
+    background-color: $color-bg;
+    text-shadow: 1px 1px 0 $color-white;
+    font-family: 'Baloo Tamma 2', cursive;
+    caret-color: $primary-dark;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    margin-top: 5x;
+    margin-bottom: 5x;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7.5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease;
+    color: $greyDark;
+
+    &:hover {
+        color: $primary;
+    }
+
+    &:active {
+        box-shadow: $inner-shadow;
+    }
+}
+
+ion-list {
+    --background: transparent;
+
+    ion-item {
+        --background: #1A1E28;
+        background: #1A1E28;
+        color: #fff;
+
+        ion-label {
+            font-size: 20px;
+
+            span {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.grand-total {
+    font-weight: 500;
+}
+
+.upload-row {
+    margin-left: auto;
+    margin-right: auto;
+
+    ion-col {
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    .trash-icon {
+        position: absolute;
+        top: 2px;
+        right: 5px;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.24);
+        color:rgb(179, 39, 39)
+        
+    }
+}
+
+.total-input {
+    width: 35vw;
+    height: 3rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding-left: 1.4rem;
+    box-shadow: $inner-shadow;
+    background: none;
+    font-family: inherit;
+    color: $greyDark;
+    text-align:center;
+
+    &::placeholder {
+        color: $greyLight-3;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: $shadow;
+    }
+}
+
+.upload-receipt-btn {
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7.5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease;
+    color: $greyDark;
+
+    &:hover {
+        color: $primary;
+    }
+
+    &:active {
+        box-shadow: $inner-shadow;
+    }
+}
+
+.rt-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    color: $greyDark;
+    font-family: 'Baloo Tamma 2', cursive;
+    position: relative;
+    background: inherit;
+    outline: none;
+    border: none;
+    box-shadow: 2px 2px 2px 0px #DFE4EA inset, -2px -2px 2px 0px #ffffff inset;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 2em;
+
+    ion-icon {
+        margin-top: 5px;
+        font-weight: bold;
+        font-size: 2em;
+    }
+}
+
+
+.complete-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease;
+    background: $primary;
+    box-shadow: inset .2rem .2rem 1rem $primary-light,
+        inset -.2rem -.2rem 1rem $primary-dark,
+        $shadow;
+    color: $greyLight-1;
+    border: none;
+    outline: none;
+}
+
+.cancel-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease;
+    background: rgb(192, 58, 58);
+    box-shadow: inset .2rem .2rem 1rem rgb(226, 104, 104),
+        inset -.2rem -.2rem 1rem rgb(165, 49, 49),
+        $shadow;
+    color: $greyLight-1;
+    border: none;
+    outline: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+
+
+.tab-btn {
+    color: inherit;
+    position: relative;
+    background: inherit;
+    outline: none;
+    border: none;
+    box-shadow: -4px -2px 4px 0px #ffffff, 4px 2px 6px 0px #DFE4EA;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.tab-btn:focus::after,
+.tab-btn:active::after,
+.tab-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 0px #DFE4EA inset, -2px -2px 2px 0px #ffffff inset;
+}
+
+.tab-btn {
+    padding: 0.5rem 0.75rem;
+}
+
+.tab-btn svg.feather {
+    color: #8fa3bc;
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 16px;
+}
+
+.tab-btn {
+    padding: 0.5rem 0.75rem;
+}
+
+.tab-btn.active {
+    color: #4a5568;
+}
+
+.text-muted {
+    color: #8fa3bc;
+    
+}

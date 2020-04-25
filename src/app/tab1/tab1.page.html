@@ -1,17 +1,95 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<!-- <ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar transparent>
     <ion-title>
-      Tab 1
+      H5 MOCKUP
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="animated slideInRight" size="4">
+        <div class="ion-text-center ion-align-items-center" class="box circle">
+          <ion-icon slot="start" src="assets/icons/list.svg"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col class="animated slideInUp"  size="4">
+        <div class="ion-text-center ion-align-items-center" class="box circle">
+          <ion-icon slot="start" src="assets/icons/chat.svg"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col class="animated slideInLeft"  size="4">
+        <div class="ion-text-center ion-align-items-center" class="box circle">
+          <ion-icon slot="start" src="assets/icons/marker.svg"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="neu-shadows animated fadeIn">
+    <ngx-datatable class="dark" [limit]="8" [rows]="rows" [rowHeight]="'auto'" [columns]="columns"
+      [columnMode]="'force'" [headerHeight]="50" [footerHeight]="0">
+      <ngx-datatable-column *ngFor="let label of labels" [name]="label.name" [prop]="label.prop">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <span title="Double Click to Edit" (dblclick)="editCell(label.prop, rowIndex)"
+            *ngIf="!editing[rowIndex + '-' + label.prop] && (label.prop === 'price' || label.prop === 'qty')">
+            {{ value }}
+          </span>
+          <span *ngIf="!editing[rowIndex + '-' + label.prop] && label.prop === 'item'">
+            {{ value }}
+          </span>
+          <input autofocus (blur)="updateValue($event, label.prop, rowIndex)"
+            (keyup.enter)="updateValue($event, label.prop, rowIndex)" *ngIf="editing[rowIndex+ '-' + label.prop]"
+            [type]="label.inputType" class="form-control input" [value]="value" />
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+  <ion-list lines="none" class="ion-no-padding animated fadeIn">
+    <ion-item>
+      <ion-label class="ion-text-wrap" slot="end">
+        <b>Sub Total: </b> <span class="totals-amount"> {{subTotal | currency}}</span>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-text-wrap" slot="end">
+        <b>Shipping: </b> <span class="totals-amount">{{shipping | currency}}</span>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="grand-total ion-text-wrap" slot="end">
+        <b>Est. Total: </b> <span class="totals-amount">{{ subTotal + shipping | currency}}</span>
+      </ion-label>
+    </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  </ion-list>
+  <ion-row class="upload-row ion-padding">
+    <ion-col  *ngIf="imageUrl.length === 0" (click)="takePicture()" size="6">
+      <button id="btntransactions" class="t4 w-100 rt-btn">UPLOAD RECEIPT <ion-icon name="image-outline"></ion-icon></button>
+    </ion-col>
+    <ion-col class="image-col" *ngIf="imageUrl.length > 0" size="6">
+      <ion-icon (click)="removeImage()" class="trash-icon" name="trash-outline"></ion-icon>
+      <img *ngIf="imageUrl.length > 0" [src]="this.sanitizer.bypassSecurityTrustResourceUrl(imageUrl)">
+    </ion-col>
+    <ion-col size="6">
+      <ion-input name="total" (keydown)="totalChanged($event)" class="total-input" placeholder="Order Total" type="number"></ion-input>
+    </ion-col>
+  </ion-row>
+ 
+
+  <button (click)="save()" class="complete-btn animated slideInLeft">Complete Order</button>
+  <button (click)="save()" class="cancel-btn animated slideInRight">Cancel Order</button>
+
+  <!-- <nav>
+    <a href="#" class="tab-btn text-muted"><i-feather name="home" ></i-feather></a>
+    <a href="#" class="tab-btn text-muted"><i data-feather="credit-card"></i></a>
+    <a href="#" class="tab-btn text-muted active"><i data-feather="trending-up"></i></a>
+    <a href="#" class="tab-btn text-muted"><i data-feather="bell"></i></a>
+  </nav> -->
+
+  <!-- <ion-card (click)="save()" class="neu-card">
+    ...
+  </ion-card> -->
 </ion-content>
+
+

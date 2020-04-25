@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { MenuPage } from '../pages/menu/menu.page';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(private modalController: ModalController) {}
+
+  async openMenu() {
+    const modal = await this.modalController.create({
+      component: MenuPage
+    });
+    return await modal.present();
+  }
 
 }
